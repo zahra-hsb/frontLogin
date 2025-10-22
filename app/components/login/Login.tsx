@@ -18,7 +18,6 @@ import TextField from '@mui/material/TextField';
 
 const Login = () => {
     return (
-        // <div className='p-10 w-screen flex items-center justify-center h-screen'>
         <Stack sx={{
             padding: {
                 xs: 5,
@@ -33,7 +32,7 @@ const Login = () => {
                 xs: 2
             },
         }}
-        className='w-screen h-screen'
+            className='w-screen h-screen'
         >
             <Stack
                 padding={5}
@@ -42,10 +41,13 @@ const Login = () => {
                 sx={{
                     paddingX: {
                         lg: 10
+                    },
+                    spacing: {
+                        xl: 0,
                     }
                 }}
-                className='lg:h-full justify-between'
-                spacing={3} flexDirection={'column'} justifyItems={'flex-end'} gap={'2'} alignItems={'center'}>
+                className='xl:h-full duration-300 justify-between hover:border! hover:border-[#999]! bg-linear-to-bl from-[#1f1f1f] to-[#171717]'
+                flexDirection={'column'} spacing={3} justifyItems={'flex-end'}  alignItems={'center'}>
                 <h3 className='text-3xl'>
                     Login
                 </h3>
@@ -65,7 +67,6 @@ const Login = () => {
                 </Stack>
             </Stack>
         </Stack>
-        // </div>
     )
 }
 

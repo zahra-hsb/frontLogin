@@ -7,6 +7,11 @@ import {
   ScrollRestoration,
 } from "react-router";
 
+import {
+  QueryClient,
+  QueryClientProvider
+} from "@tanstack/react-query"
+
 import type { Route } from "./+types/root";
 import "./app.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -24,11 +29,33 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+const primary = {
+  main: '#9929EA',
+  light: '#D78FEE',
+  dark: '#9929EA',
+  contrastText: '#fff'
+};
+
+const secondary = {
+  main: '#D78FEE',
+  light: '#D78FEE',
+  dark: '#9929EA',
+  contrastText: '#fff'
+};
+
 const theme = createTheme({
   palette: {
-    mode: 'dark'
-  }
+    mode: 'dark',
+    primary,
+    secondary,
+  },
+  colorSchemes: {
+    dark: true,
+    light: true
+  },
 })
+
+const queryClient = new QueryClient()
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -41,7 +68,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ThemeProvider theme={theme}>
-          {children}
+          <QueryClientProvider client={queryClient}>
+            {children}
+          </QueryClientProvider>
         </ThemeProvider>
         <ScrollRestoration />
         <Scripts />

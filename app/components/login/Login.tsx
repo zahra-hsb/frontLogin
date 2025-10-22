@@ -3,18 +3,6 @@ import LoginIcon from '@mui/icons-material/Login';
 import RegisterIcon from '@mui/icons-material/Person';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
-// import Box from '@mui/material/Box'
-// import { styled } from '@mui/material/styles';
-// import Badge, { badgeClasses } from '@mui/material/Badge';
-
-
-// const CartBadge = styled(Badge)`
-//   & .${badgeClasses.badge} {
-//     top: -12px;
-//     right: -6px;
-//   }
-// `;
-
 
 const Login = () => {
     return (
